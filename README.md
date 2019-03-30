@@ -31,7 +31,7 @@ According to OpenFlow doccumentation 1.3 and pox_wiki, there are many kinds of s
   
   Step 6.6: Calculate reachability distance for each component of matrix data
   
-  Step 6.7: Calculate lrd (local reachabiity density) for each component of matrix data
+  Step 6.7: Calculate lrd (local reachability density) for each component of matrix data
   
   Step 6.8: Write LOF_predict function based on k nearest neighboors
   
