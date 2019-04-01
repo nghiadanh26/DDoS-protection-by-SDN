@@ -39,5 +39,25 @@ According to OpenFlow doccumentation 1.3 and pox_wiki, there are many kinds of s
   
   Reference for LOF is following https://towardsdatascience.com/local-outlier-factor-for-anomaly-detection-cc0c770d2ebe
   
+  #### Sorry, at the last meeting, we have discussed about LOF, how to make LOF on matrix faster. That is solution! We will remove Step 6 and move on Step 7! (1/4/2019)
+  
+--------------> Step 7: Faster LOF on matrix.
+
+The idea of this solution is cutting off unexisted link. By this way we can reduce from 36 to 10 times to calculate LOF. This following some substeps:
+
+  Step 7.1: Rebuild topology, the new topology file named 6sw_v3.py
+  
+  Step 7.2: Modify the code to collect data from OVSes
+  
+  Step 7.3: Collect matrix data (10 instead of 36 points)
+  
+  Step 7.4: Normalize data and save in csv file
+  
+  Step 7.5: Write LOF
+  
+  Step 7.6: Training LOF
+  
+  Step 7.7: Run demontration on Mininet.
+  
   
   
