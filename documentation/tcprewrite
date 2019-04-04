@@ -1,0 +1,11 @@
+•	Câu lệnh sửa đổi địa chỉ mac trong file pcap:
+
+tcprewrite --dlt=enet --enet-dmac=00:9C:02:1D:F8:86 --enet-smac=ff:ff:ff:ff:ff:ff --infile=filterddos.pcap --outfile=filterddos_mac_broadcast.pcap ## add mac broadcast
+
+•	Thay đổi địa chỉ IP đích trong file pcap:
+
+tcprewrite --infile=filterddos_mac_broadcast.pcap --outfile=filterddos_mac_broadcast_ip_250.pcap  --pnat=71.126.222.64:192.168.1.250--cachefile=input.cache
+
+•	Phát lưu lượng:
+
+sudo tcpreplay –i eth0 testddos.pcap
