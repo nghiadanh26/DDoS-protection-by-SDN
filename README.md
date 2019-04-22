@@ -61,5 +61,31 @@ The idea of this solution is cutting off unexisted link. By this way we can redu
   
   Step 7.7: Run demontration on Mininet.
   
+  ## How to understand this project
   
+  First, everything in this project is written in algorithm_v2.py file, including:
+  
+    + How to collect data from OVSs
+    + Collect data
+    + Normalize data
+    + Collect data for training
+    + Training with LOF
+    + Dectect anomal point real time
+    
+ Second, LOF algorithm is contained in local_outlier_factor_v2.py
+ 
+ ## How to run simulation
+ #####Step 1: Run topology on Mininet
+ 
+ $ cd DDoS-protection-by-SDN
+ 
+ $ sudo python 6sw_v3.py
+ 
+ #####Step 2: Run pox controller
+ 
+ Open another terminal, and run python file:
+ 
+ $ cd DDoS-protection-by-SDN/pox
+ 
+ $ ./pox.py algorithm_v2 forwarding.l2_learning
   
