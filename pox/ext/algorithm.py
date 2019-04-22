@@ -144,7 +144,7 @@ def show_rate ():
    print('\n')
 
 
-######################## Collect new flow rate (new_flow/s) and rate (bps)############
+######################## Collect new flow rate (new_flow/s) and rate (bps) version 0############
 
 data_normal = pd.DataFrame(columns=['throughput','new_flow'])
 def collect_normal_data():
@@ -165,7 +165,7 @@ def write_to_csv():
    data_normal.to_csv('normal.csv')
 
 
-######################## Collect matrix data #########################################
+######################## Collect matrix data version 1 #########################################
 
 data_matrix = pd.DataFrame(columns=['throughput','new_flow'])
 def collect_data_matrix():
@@ -195,7 +195,7 @@ def set_index_data_matrix(size,stats_time,write_time):
 def data_matrix_to_csv():
    data_matrix.to_csv('matrix_data.csv')
 
-########################LOF algorithm - Step1: Normalize data ##############################################
+########################Step 6.1: Collect matrix data and normalize them before saving to csv file
 
 feature = normalize_feature.max_min_feature
 def normalize_vector(vector):

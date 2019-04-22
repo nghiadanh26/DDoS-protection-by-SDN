@@ -13,19 +13,16 @@ from pox.openflow.of_json import *
 
 log = core.getLogger()
 
-def _handle_aggregate_received(event):
-	stats = flow_stats_to_list(event.stats)
-  	log.debug("FlowStatsReceived from %s: %s", dpidToStr(event.connection.dpid), stats)
-  	#print(event.ofp)
+def _handle_port_received(event):
+  	#log.debug("PortStatsReceived from %s: %s", dpidToStr(event.connection.dpid), stats)
+
   	global byte_count
-  	#if (event.connection.dpid):
-  		#print ("dpid =", event.connection.dpid)
-  	flow_matrix = []
-  	byte_count = 0
-  	duration = 0
-  	if(event.connection.dpid == 1):
+  	if(event.connection.dpid == 4):
 	  	for f in event.stats:
-	  		print(f.match.in_port)
+	  		if(f.port_no == 1):
+		  		#print(f.port_no)
+		  		print(f.rx_bytes)
+		  		print("\n")
 
 
 
@@ -34,10 +31,10 @@ def _handle_aggregate_received(event):
 
 def _timer_func ():
 	for connection in core.openflow._connections.values():
-		connection.send(of.ofp_stats_request(body=of.ofp_flow_stats_request()))
+		connection.send(of.ofp_stats_request(body=of.ofp_port_stats_request()))
   	log.debug("Sent %i flow/port stats request(s)", len(core.openflow._connections))
 
 
 def launch():
-	core.openflow.addListenerByName("FlowStatsReceived", _handle_aggregate_received)
+	core.openflow.addListenerByName("PortStatsReceived", _handle_port_received)
 	Timer(5,_timer_func, recurring=True)
