@@ -1,5 +1,6 @@
 # DDoS-protection-by-SDN
 ## About the project
+Hello, I am N.D. Nghia from Future Internet Lab. I have main responsibility to run this project from the beginning. You can contact me for more detail via nghiadanh.fil@gmail.com.
 
 This is a big project of Future Internet Lab, guided by Assoc. Prof. Nguyen Huu Thanh. We use POX controller to excute SDN architecture. The main purpose of this project is how to detect DDoS attack(common attacks, such as: TCP SYN, ICMP Flood, UDP Flood) and mitigate them by policies. All algorithms we use in this project are machine leaning algorithms, written in PYTHON.
 
