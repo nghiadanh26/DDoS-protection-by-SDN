@@ -75,13 +75,13 @@ The idea of this solution is cutting off unexisted link. By this way we can redu
  Second, LOF algorithm is contained in local_outlier_factor_v2.py
  
  ## How to run simulation
- #####Step 1: Run topology on Mininet
+ ##### Step 1: Run topology on Mininet
  
  $ cd DDoS-protection-by-SDN
  
  $ sudo python 6sw_v3.py
  
- #####Step 2: Run pox controller
+ ##### Step 2: Run pox controller
  
  Open another terminal, and run python file:
  
