@@ -44,7 +44,7 @@ According to OpenFlow doccumentation 1.3 and pox_wiki, there are many kinds of s
   
   #### Sorry, at the last meeting, we have discussed about LOF, how to make LOF on matrix faster. That is solution! We will remove Step 6 and move on Step 7! (1/4/2019)
   
---------------> Step 7: Faster LOF on matrix.
+        Step 7: Faster LOF on matrix.
 
 The idea of this solution is cutting off unexisted link. By this way we can reduce from 36 to 10 times to calculate LOF. This following some substeps:
 
